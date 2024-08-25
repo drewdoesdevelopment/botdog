@@ -21,22 +21,22 @@ func loginBot() {
 	}
 
 	botApiKey := os.Getenv("BOT_API_SECRET")
-    fmt.Println(botApiKey)
+	fmt.Println(botApiKey)
 
 	discord, discLibErr := discordgo.New("Bot " + botApiKey)
 
-    if discLibErr != nil {
-        log.Fatal(discLibErr)
-    }
+	if discLibErr != nil {
+		log.Fatal(discLibErr)
+	}
 
-    connectionErr := discord.Open()
-    if connectionErr != nil {
-        log.Fatal(connectionErr)
-    }
-    defer discord.Close()
+	connectionErr := discord.Open()
+	if connectionErr != nil {
+		log.Fatal(connectionErr)
+	}
+	defer discord.Close()
 
-    fmt.Println("Botdog running...")
-    ch := make(chan os.Signal, 1)
-    signal.Notify(ch, os.Interrupt)
-    <- ch
+	fmt.Println("Botdog running...")
+	ch := make(chan os.Signal, 1)
+	signal.Notify(ch, os.Interrupt)
+	<- ch
 }
