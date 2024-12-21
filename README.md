@@ -1,5 +1,5 @@
-# botdog
+🤖🐶
 
 🚧 Active work in progress 🚧
 
-Botdog is a chat and automation bot with some fun twists, built in Go.
+Botdog is a fun Discord/Web bot that performs automation and productivity tasks.
